@@ -4,11 +4,23 @@
 }
 
 body, html {
-  font-family: sans-serif;
+  font-family: "Bahnschrift", "Segoe UI", Arial, sans-serif;
+  color: #2F4832;
   margin: 0;
   padding: 0;
   height: 100%;
   font-size: 16px;
+}
+
+/* De achtergrond scrollt met de pagina mee omhoog, zonder JavaScript. */
+body {
+    min-height: 150vh;
+    background-color: #304832;
+    background-image: url("assets/bergen-groen.png");
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
 }
 
 ul {
@@ -22,12 +34,19 @@ li {
 
 a {
     text-decoration:none;
-    color: black;
+    color: inherit;
+}
+
+header nav a {
+    display: inline-block;
+    border: 2px solid #2F4832;
+    white-space: nowrap;
 }
 
 header {
+    margin-inline: 6rem;
     
-    background-color:rgb(214, 236, 255);
+    background-color: transparent;
     display: flex;
     justify-content: space-between;
     height: 10rem;
@@ -49,4 +68,29 @@ main section {
 #spacer {
 
     margin-top: 6rem;
+}
+
+/*Responsiveness */
+@media (max-width: 60rem) {
+    header {
+        margin-inline: 1rem;
+        flex-direction: column;
+        height: auto;
+        padding-inline: 1rem;
+        text-align: center;
+    }
+
+    header nav,
+    header ul {
+        padding: 0;
+    }
+
+    header ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    header li {
+        margin: 0;
+    }
 }
