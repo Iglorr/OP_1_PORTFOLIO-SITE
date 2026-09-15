@@ -67,6 +67,8 @@ header {
     margin-block: 1em;
     font-size: 3rem;
     font-weight: 700;
+    border-bottom: 2px solid #2F4832;
+    border-left: 2px solid #2F4832;
 }
 
 .intro {
@@ -146,7 +148,7 @@ footer p {
 }
 
 .blog-page {
-    max-width: 64rem;
+    max-width: 100rem;
     margin-inline: auto;
 }
 
@@ -162,12 +164,22 @@ footer p {
     margin: 0;
 }
 
+.blog-page h1 {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #2F4832;
+}
+
+.blog-page section {
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #2F4832;
+}
+
 #blog-status {
     padding: 0;
 }
 
 .blog-scroll {
-    max-height: 32rem;
+    max-height: 42rem;
     overflow-y: auto;
     padding: 0.25rem 0.75rem 0.25rem 0.25rem;
     scrollbar-color: #657A5D #f7f0df;

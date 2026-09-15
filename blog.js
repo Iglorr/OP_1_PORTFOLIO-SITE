@@ -21,6 +21,27 @@ fetch("assets/Blogs.json")
             article.appendChild(title);
             article.appendChild(date);
             article.appendChild(text);
+
+            if (blog.sources && blog.sources.length > 0) {
+                const details = document.createElement("details");
+                const summary = document.createElement("summary");
+                details.className = "blog-sources";
+                summary.textContent = "Bronnen bekijken";
+                details.appendChild(summary);
+
+                blog.sources.forEach(source => {
+                    const paragraph = document.createElement("p");
+                    const link = document.createElement("a");
+                    link.textContent = source.title;
+                    link.href = source.url;
+                    link.className = "blog-source";
+                    paragraph.appendChild(link);
+                    details.appendChild(paragraph);
+                });
+
+                article.appendChild(details);
+            }
+
             item.appendChild(article);
             blogList.appendChild(item);
         });
