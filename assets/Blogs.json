@@ -1,0 +1,37 @@
+[
+    {
+        "title": "Mijn homepage: grote letters en groene tinten",
+        "date": "2026-09-15",
+        "text": "Op mijn homepage staat Student 'HBO-ICT' redelijk groot in beeld. Hierdoor is het meteen duidelijk wat ik nu doe met betreffing tot ICT. Daaronder staat ook een stukje kleinere tekst over eigenlijk zo goed als niks.\n\nMAAR! Dat verschil in grootte heeft dus een reden. Volgens Nielsen Norman Group vallen grote dingen eerder op dan kleine dingen. Door de titel groter te maken dan de rest, stuur je een beetje waar iemand eerst naar kijkt. Visuele hiërarchie heet dat. Klinkt best serieus, best cool, maar hier betekent het vooral: eerst de titel, daarna de rest.\n\nVoor de kleuren heb ik groen met een warme, gebroken witte achtergrond gekozen. Vooral omdat ik het gewoon mooi vond en het er leuk uitzag. Het voelt voor mij rustig en de donkere letters zijn duidelijk te zien op de lichte achtergrond.\n\nDie combinatie blijkt ook een behoorlijk sterk contrast te hebben. De donkergroene titel (#2F4832) op de achtergrond (#F7F0DF) komt uit op ongeveer 8,8:1. Dat getal zegt hoeveel verschil er zit tussen licht en donker. Voor gewone tekst vragen de WCAG-richtlijnen minimaal 4,5:1 en voor grote tekst 3:1. Met deze twee kleuren zit ik daar dus ruim boven.\n\nDat licht-donkerverschil kan ook helpen als je kleuren minder goed uit elkaar kunt houden. Dat betekent niet dat groen ineens voor iedereen met kleurenblindheid perfect werkt, of dat mijn hele website nu automatisch toegankelijk is. Maar voor het contrast van deze tekst is het in ieder geval een goede combinatie. Das dus fijn.. want ik begon eigenlijk gewoon met kleuren die me wat aanstonden.",
+        "sources": [
+            {
+                "title": "Nielsen Norman Group – 5 Principles of Visual Design in UX",
+                "url": "https://www.nngroup.com/articles/principles-visual-design/"
+            },
+            {
+                "title": "W3C – Contrast (Minimum)",
+                "url": "https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum"
+            },
+            {
+                "title": "W3C – Use of Color",
+                "url": "https://www.w3.org/WAI/WCAG21/Understanding/use-of-color.html"
+            }
+        ]
+    },
+    {
+        "title": "Een blogpagina. Met blogs. In een lijst.",
+        "date": "2026-09-15",
+        "text": "De website heeft nu ook een blogpagina. Daar staan de blogs gewoon onder elkaar in een scrollbare lijst, want waarom zou ik ze anders neerzetten? Elk bericht heeft een rechthoekig blok met een titel, datum en tekst. Meer had ik hier eigenlijk niet nodig.\n\nDe berichten laad ik uit een JSON-bestand. Daar zet ik de titel, datum en tekst in, en eventueel wat bronnen. JavaScript leest dat bestand en loopt met forEach door de blogs heen. Met createElement worden de HTML-elementen gemaakt en met appendChild komen ze op de pagina te staan. Voor een nieuwe blog hoef ik dus niet weer een heel blok HTML te kopiëren. Gewoon een bericht aan het JSON-bestand toevoegen.\n\nDe bronnen kun je open- en dichtklappen. Die collapse-feature vond ik echt heel cool voor een goede drie seconden. Even open, weer dicht, nog een keer open. Daarna was het wel weer gewoon oké. Het is alsnog handig, want nu staat er niet meteen een hele lijst links onder de tekst.\n\nDat uitklappen gebeurt trouwens met details en summary in HTML. Daar hoefde ik niet eens aparte JavaScript voor te schrijven. Dus ja, een lijst met blogs en een klepje voor de bronnen. Werkt prima.",
+        "sources": [
+            {
+                "title": "MDN – Zo werken details en summary",
+                "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/details"
+            }
+        ]
+    },
+    {
+        "title": "Voorbeeld: wat ik heb geleerd",
+        "date": "2026-09-13",
+        "text": "Gebruik dit bericht bijvoorbeeld voor een terugblik op je week. Wat ging goed? Wat was lastig? En wat wil je de volgende keer anders doen?"
+    }
+]

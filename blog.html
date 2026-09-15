@@ -4,25 +4,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Blog | Portfolio site</title>
     <link rel="stylesheet" href="style.css">
+    <script src="blog.js" defer></script>
 </head>
 
 <body>
 
     <header>
-        <section>
-               <h1>Woorden.</h1>
-        </section>
+        <p class="site-name">Woorden.</p>
  
         <nav>
             <ul>
-                <li><a href="wiebenik.html">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="projecten.html">Over mij</a></li>
-                <li><a href="blog.html">Blog</a></li>
+                <li><a href="blog.html" aria-current="page">Blog</a></li>
             </ul>
         </nav>     
     </header>
+
+    <main class="blog-page">
+        <section aria-labelledby="blog-title">
+            <h1 id="blog-title">Mijn blog</h1>
+            <p id="blog-status" role="status">Berichten laden…</p>
+            <div class="blog-scroll" role="region" aria-labelledby="blog-title" tabindex="0">
+                <ul class="blog-list" id="blog-list"></ul>
+            </div>
+            <noscript>Schakel JavaScript in om de blogberichten te lezen.</noscript>
+        </section>
+    </main>
+
+     <footer>
+        <p>&copy; 2026 Lior Resida. Met veel zin gemaakt.</p>
+        <p>25149946@student.hhs.nl</p>
+    </footer>
 
 </body>
 
