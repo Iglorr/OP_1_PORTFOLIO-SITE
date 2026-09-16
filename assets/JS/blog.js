@@ -1,7 +1,7 @@
 const blogList = document.querySelector("#blog-list");
 const blogStatus = document.querySelector("#blog-status");
 
-fetch("assets/Blogs.json")
+fetch("assets/JSON/Blogs.json")
     .then(response => response.json())
     .then(blogs => {
         blogStatus.textContent = "";
@@ -9,7 +9,7 @@ fetch("assets/Blogs.json")
         blogs.forEach(blog => {
             const item = document.createElement("li");
             const article = document.createElement("article");
-            const title = document.createElement("h2");
+            const title = document.createElement("h3");
             const date = document.createElement("time");
             const text = document.createElement("p");
 

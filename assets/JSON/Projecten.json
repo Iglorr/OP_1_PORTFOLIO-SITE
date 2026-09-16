@@ -1,0 +1,38 @@
+[
+    {
+        "title": "Project 1",
+        "text": "Hier komt mijn 1e project.",
+        "image": "",
+        "alt": "de afbeelding van mijn 1e project"
+    },
+    {
+        "title": "Project 2",
+        "text": "Hier komt mijn 2e project.",
+        "image": "",
+        "alt": "de afbeelding van mijn 2e project"
+    },
+    {
+        "title": "Project 3",
+        "text": "Hier komt mijn 3e project.",
+        "image": "",
+        "alt": "de afbeelding van mijn 3e project"
+    },
+    {
+        "title": "Project 4",
+        "text": "Hier komt mijn 4e project.",
+        "image": "",
+        "alt": "de afbeelding van mijn 4e project"
+    },
+    {
+        "title": "Project 5",
+        "text": "Hier komt mijn 5e project.",
+        "image": "",
+        "alt": "de afbeelding van mijn 5e project"
+    },
+    {
+        "title": "Project 6",
+        "text": "Hier komt mijn 6e project.",
+        "image": "",
+        "alt": "de afbeelding van mijn 6e project"
+    }
+]

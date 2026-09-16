@@ -5,23 +5,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Website</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/CSS/style.css">
+    <script src="assets/JS/projecten.js" defer></script>
 </head>
 
 <body>
 
     <header>
-        <section>
-               <h1>Woorden.</h1>
-        </section>
+        <h1 class="site-name">Projecten</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="projecten.html">projecten</a></li>
-                <li><a href="blog.html" aria-current="page">Blog</a></li>
+                <li><a href="projecten.html" aria-current="page">Projecten</a></li>
+                <li><a href="blog.html">Blog</a></li>
             </ul>
         </nav>     
     </header>
+
+    <main class="projects-page">
+        <h2 id="projects-title">Mijn projecten</h2>
+        <div class="projects-layout">
+        <div class="blog-scroll project-scroll" role="region" aria-labelledby="projects-title" tabindex="0">
+        <ul class="blog-list" id="project-list"></ul>
+        </div>
+        <div class="project-preview">
+            <p id="project-placeholder">kies ff een projectje</p>
+            <img id="project-image" alt="" hidden>
+        </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Lior Resida. Met veel zin gemaakt.</p>
+        <p>25149946@student.hhs.nl</p>
+    </footer>
 
 </body>
 
