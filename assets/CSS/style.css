@@ -71,11 +71,21 @@ header {
     border-left: 2px solid #2F4832;
 }
 
+.home-page {
+    display: grid;
+    grid-template-columns: minmax(0, 88rem) auto;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
 .intro {
     display: grid;
-    grid-template-columns: 1.15fr 1fr;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    gap: 1rem;
     align-items: center;
     max-width: 88rem;
+    width: 100%;
     min-height: 28rem;
     margin-inline: auto;
     padding: clamp(1.5rem, 5vw, 5rem);
@@ -91,6 +101,32 @@ main {
 .intro-label {
     font-size: 1rem;
     letter-spacing: 0.12em;
+}
+
+.intro-next {
+    width: 3.5rem;
+    height: 3.5rem;
+    padding: 0;
+    border: 2px solid #2F4832;
+    background-color: transparent;
+    color: #2F4832;
+    font: inherit;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.intro-next:hover {
+    background-color: rgb(47 72 50 / 8%);
+}
+
+.intro-next:focus-visible {
+    outline: 2px solid #2F4832;
+    outline-offset: 4px;
+}
+
+.intro-text h2 {
+    white-space: pre-line;
+    overflow-wrap: anywhere;
 }
 
 .intro-text h2 {
@@ -316,6 +352,10 @@ footer p {
 }
 
 @media (max-width: 42rem) {
+    .home-page {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
     .projects-layout {
         flex-direction: column;
     }
@@ -331,6 +371,10 @@ footer p {
 
     .intro-placeholder {
         aspect-ratio: 4 / 3;
+    }
+
+    .intro-next {
+        justify-self: end;
     }
 }
 

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | Portfolio Website</title>
     <link rel="stylesheet" href="assets/CSS/style.css">
+    <script src="assets/JS/intro.js" defer></script>
 </head>
 
 <body>
@@ -14,9 +15,9 @@
         <h1 class="site-name">LIOR. </h1>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html" aria-current="page">Home</a></li>
                 <li><a href="projecten.html">projecten</a></li>
-                <li><a href="blog.html" aria-current="page">Blog</a></li>
+                <li><a href="blog.html">Blog</a></li>
             </ul>
         </nav>     
     </header>
@@ -25,9 +26,9 @@
 
 
 
-    <main>
+    <main class="home-page">
         <section class="intro" aria-labelledby="intro-title">
-            <article class="intro-text">
+            <article class="intro-text" id="intro-card" aria-live="polite" aria-atomic="true">
                 <p class="intro-label">— Ik ben..</p>
                 <h2 id="intro-title">Student<br>HBO-ICT</h2>
                 <p class="intro-description">En ik probeer m'n tweede jaar door te komen.</p>
@@ -36,6 +37,7 @@
                 <figcaption>De beste place holder ooit</figcaption>
             </figure>
         </section>
+        <button class="intro-next" type="button" aria-label="Volgende introkaart" aria-controls="intro-card" hidden>→</button>
     </main>
 
     <footer>
