@@ -22,7 +22,7 @@ body, html {
 
 
 body {
-    height: auto; /* Laat de body meegroeien met de inhoud. */
+    height: auto;
     min-height: 100vh;
     padding-bottom: 10rem;
     background-color: #f7f0df;
@@ -42,7 +42,8 @@ a {
     color: inherit;
 }
 
-header nav a {
+header nav a,
+header nav button.contact-link {
     display: inline-flex;
     width: 8rem;
     height: 3.5rem;
@@ -58,7 +59,8 @@ header {
     background-color: transparent;
     display: flex;
     justify-content: space-between;
-    height: 10rem;
+    min-height: 10rem;
+    flex-wrap: wrap;
     align-items: center;
 }
 
@@ -349,6 +351,122 @@ footer p {
 .project-preview p {
     margin: 0;
     padding: 0;
+}
+
+.contact-open {
+    overflow: hidden;
+}
+
+.contact-link,
+.contact-close,
+.contact-submit {
+    border: 1px solid #2F4832;
+    padding: 0.65rem 1rem;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+}
+
+.contact-link:hover,
+.contact-close:hover,
+.contact-submit:hover {
+    background: rgb(47 72 50 / 8%);
+}
+
+header nav {
+    max-width: 100%;
+}
+
+header nav ul {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+header nav .contact-link {
+    background-color: #2F4832;
+    color: #f7f0df;
+    border: 2px solid #2F4832;
+}
+
+header nav .contact-link:hover {
+    background-color: #3F583F;
+}
+
+.contact-link:focus-visible,
+.contact-dialog :focus-visible,
+.contact-submit:focus-visible {
+    outline: 2px solid #2F4832;
+    outline-offset: 3px;
+}
+
+.contact-dialog {
+    position: fixed;
+    inset: 0 0 0 auto;
+    margin: 0;
+    width: min(100%, 34rem);
+    height: 100dvh;
+    max-width: 100%;
+    max-height: 100dvh;
+    padding: clamp(1rem, 4vw, 2rem);
+    border: 0;
+    border-left: 1px solid #2F4832;
+    background: #f7f0df;
+    color: #3F4832;
+    overflow-y: auto;
+}
+
+.contact-dialog::backdrop {
+    background: rgb(20 30 20 / 45%);
+}
+
+.contact-close {
+    display: block;
+    margin-left: auto;
+    margin-bottom: 1.5rem;
+}
+
+.contact-dialog section,
+.contact-dialog h2,
+.contact-dialog p {
+    padding: 0;
+}
+
+.contact-dialog h2 {
+    margin: 0;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #2F4832;
+    font-size: 2rem;
+}
+
+.contact-dialog .contact-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.contact-dialog .contact-form p {
+    width: 100%;
+}
+
+.contact-dialog .contact-form .contact-first-name,
+.contact-dialog .contact-form .contact-last-name {
+    width: calc(50% - 0.5rem);
+}
+
+.contact-dialog textarea {
+    height: 10rem;
+}
+
+.contact-submit {
+    grid-column: 1 / -1;
+    width: 100%;
+}
+
+#contact-help {
+    padding: 0;
+    line-height: 1.6;
 }
 
 .contact-page {
