@@ -9,14 +9,13 @@ const filterStatus = document.querySelector("#filter-status");
 fetch("assets/JSON/Projecten.json")
     .then(response => response.json())
     .then(projects => {
-        function showProjects(category) {
-            // Maak de lijst leeg voordat de gekozen categorie wordt getoond.
+        function filterProjects(category) {
             projectList.textContent = "";
             projectImage.hidden = true;
             projectImage.removeAttribute("src");
             placeholder.hidden = false;
             placeholder.textContent = "kies ff een projectje";
-            filterStatus.textContent = "Je bekijkt " + category + " projecten.";
+            filterStatus.textContent = "Je bekijkt de" + category + " projects.";
 
             projects.forEach(project => {
                 if (project.category === category) {
@@ -54,14 +53,14 @@ fetch("assets/JSON/Projecten.json")
         }
 
         personalButton.addEventListener("click", () => {
-            showProjects("personal");
+            filterProjects("personal");
         });
 
         schoolButton.addEventListener("click", () => {
-            showProjects("school");
+            filterProjects("school");
         });
 
-        showProjects("personal");
+        filterProjects("personal");
     });
 
 projectImage.addEventListener("load", () => {
