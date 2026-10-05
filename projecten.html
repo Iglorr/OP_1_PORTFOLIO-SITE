@@ -23,7 +23,14 @@
     </header>
 
     <main class="projects-page">
-        <h2 id="projects-title">Mijn projecten</h2>
+        <div class="projects-heading">
+            <h2 id="projects-title">Mijn projecten</h2>
+            <div class="project-filters" role="group" aria-label="Projectcategorie">
+                <button id="filter-personal" type="button" aria-controls="project-list">Personal</button>
+                <button id="filter-school" type="button" aria-controls="project-list">School</button>
+            </div>
+        </div>
+        <p id="filter-status" role="status"></p>
         <section class="projects-layout">
         <div class="blog-scroll project-scroll" role="region" aria-labelledby="projects-title" tabindex="0">
         <ul class="blog-list" id="project-list"></ul>

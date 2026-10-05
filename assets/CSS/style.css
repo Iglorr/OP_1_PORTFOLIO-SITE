@@ -493,3 +493,47 @@ footer p {
         margin: 0;
     }
 }
+
+/* Titel en categoriefilters naast elkaar. */
+.projects-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 0 0 1rem;
+    border-bottom: 1px solid #2F4832;
+}
+
+.projects-heading h2 {
+    padding: 0;
+    border: 0;
+}
+
+.project-filters {
+    display: flex;
+    gap: 0.75rem;
+    padding: 0;
+}
+
+.project-filters button {
+    padding: 0.75rem 1rem;
+    border: 1px solid #2F4832;
+    background-color: transparent;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+}
+
+.project-filters button:hover {
+    background-color: rgb(47 72 50 / 8%);
+}
+
+.project-filters button:focus-visible {
+    outline: 2px solid #2F4832;
+    outline-offset: 4px;
+}
+
+#filter-status {
+    padding: 0;
+}
