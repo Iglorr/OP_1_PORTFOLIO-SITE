@@ -1,3 +1,88 @@
+function validateName(form) {
+    const nameInput = form.querySelector("#first-name");
+    const nameError = form.querySelector("#first-name-error");
+
+    if (nameInput.value.trim() === "") {
+        nameError.textContent = "Vul je naam in.";
+        nameInput.setAttribute("aria-invalid", "true");
+        return false;
+    }
+
+    nameError.textContent = "";
+    nameInput.setAttribute("aria-invalid", "false");
+    return true;
+}
+
+function validateLastName(form) {
+    const lastNameInput = form.querySelector("#last-name");
+    const lastNameError = form.querySelector("#last-name-error");
+
+    if (lastNameInput.value.trim() === "") {
+        lastNameError.textContent = "Vul je achternaam in.";
+        lastNameInput.setAttribute("aria-invalid", "true");
+        return false;
+    }
+
+    lastNameError.textContent = "";
+    lastNameInput.setAttribute("aria-invalid", "false");
+    return true;
+}
+
+function validateEmail(form) {
+    const emailInput = form.querySelector("#email");
+    const emailError = form.querySelector("#email-error");
+
+    if (emailInput.value.trim() === "") {
+        emailError.textContent = "Vul je e-mailadres in.";
+        emailInput.setAttribute("aria-invalid", "true");
+        return false;
+    }
+
+    // type="email" laat de browser controleren of het formaat klopt.
+    if (emailInput.validity.typeMismatch) {
+        emailError.textContent = "Vul een geldig e-mailadres in, bijvoorbeeld naam@voorbeeld.nl.";
+        emailInput.setAttribute("aria-invalid", "true");
+        return false;
+    }
+
+    emailError.textContent = "";
+    emailInput.setAttribute("aria-invalid", "false");
+    return true;
+}
+
+function setupContactValidation(form) {
+    const nameInput = form.querySelector("#first-name");
+    const lastNameInput = form.querySelector("#last-name");
+    const emailInput = form.querySelector("#email");
+
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        // Controleer alle drie, zodat alle foutmeldingen tegelijk verschijnen.
+        const nameValid = validateName(form);
+        const lastNameValid = validateLastName(form);
+        const emailValid = validateEmail(form);
+
+        if (nameValid === false) {
+            nameInput.focus();
+        } else if (lastNameValid === false) {
+            lastNameInput.focus();
+        } else if (emailValid === false) {
+            emailInput.focus();
+        }
+    });
+
+    nameInput.addEventListener("input", () => {
+        validateName(form);
+    });
+    lastNameInput.addEventListener("input", () => {
+        validateLastName(form);
+    });
+    emailInput.addEventListener("input", () => {
+        validateEmail(form);
+    });
+}
+
 const contactLink = document.querySelector(".contact-link");
 
 function ContactDialogsetup() {
@@ -38,9 +123,7 @@ function ContactDialogsetup() {
                 const section = page.querySelector(".contact-page section");
                 const form = page.querySelector(".contact-form");
 
-                form.addEventListener("submit", (event) => {
-                    event.preventDefault();
-                });
+                setupContactValidation(form);
                 content.replaceChildren(section);
                 
                 const closeButton = dialog.querySelector(".contact-close");
@@ -66,3 +149,8 @@ function ContactDialogsetup() {
 }
 
 ContactDialogsetup();
+
+const pageForm = document.querySelector(".contact-form");
+if (pageForm) {
+    setupContactValidation(pageForm);
+}

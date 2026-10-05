@@ -30,15 +30,18 @@
             <form novalidate class="contact-form" aria-labelledby="contact-title" aria-describedby="contact-help">
                 <p class="contact-first-name">
                     <label for="first-name">Naam</label>
-                    <input id="first-name" name="first-name" type="text" autocomplete="given-name" required maxlength="100">
+                    <input id="first-name" name="first-name" type="text" autocomplete="given-name" required maxlength="100" aria-describedby="first-name-error">
+                    <span id="first-name-error" class="field-error" aria-live="polite"></span>
                 </p>
                 <p class="contact-last-name">
                     <label for="last-name">Achternaam</label>
-                    <input id="last-name" name="last-name" type="text" autocomplete="family-name" required maxlength="100">
+                    <input id="last-name" name="last-name" type="text" autocomplete="family-name" required maxlength="100" aria-describedby="last-name-error">
+                    <span id="last-name-error" class="field-error" aria-live="polite"></span>
                 </p>
                 <p class="contact-email">
                     <label for="email">E-mailadres</label>
-                    <input id="email" name="email" type="email" autocomplete="email" required maxlength="254">
+                    <input id="email" name="email" type="email" autocomplete="email" required maxlength="254" aria-describedby="email-error">
+                    <span id="email-error" class="field-error" aria-live="polite"></span>
                 </p>
                 <p class="contact-message">
                     <label for="message">Bericht</label>

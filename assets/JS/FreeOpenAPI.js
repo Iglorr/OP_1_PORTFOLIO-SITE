@@ -36,5 +36,5 @@ fetch(WordListUrl)
     })
     .catch(error => {
         definition.textContent =
-            error.message + " Je kan refeshen.. gaat niet helpen denk ik man.";
+            error.message + " \nJe kan refeshen.. gaat niet helpen denk ik man.";
     });

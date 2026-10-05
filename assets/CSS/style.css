@@ -655,3 +655,35 @@ header nav .contact-link:hover {
 #filter-status {
     padding: 0;
 }
+
+/* Foutmelding bij het naamveld. */
+.field-error {
+    display: block;
+    padding: 0;
+    color: #962b20;
+}
+
+.field-error:empty {
+    display: none;
+}
+
+/* Centreer het woordkaartje op de woordpagina. */
+.word-page {
+    grid-template-columns: minmax(0, 88rem);
+}
+
+.word-page .intro {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    text-align: center;
+}
+
+.word-page .intro-text {
+    width: 100%;
+    min-width: 0;
+}
+
+.word-page .intro-description {
+    margin-inline: auto;
+    white-space: pre-line;
+}
