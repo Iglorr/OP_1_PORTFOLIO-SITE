@@ -1,40 +1,31 @@
 const wordElement = document.querySelector("#intro-title");
 const definition = document.querySelector(".intro-description");
-const WordListUrl = "https://raw.githubusercontent.com/meetDeveloper/freeDictionaryAPI/master/meta/wordList/english.txt";
 
-fetch(WordListUrl)
-    .then(response => {
-        if (!response.ok) {
-            throw new Error("Network response was not ok");
-        }
-        return response.text();
-    })
+function showWord(data) {
+    wordElement.textContent = data.word;
+    definition.textContent = data.meaning;
+}
 
-        .then(text => {
-        const words = text.trim().split("\n");
+function loadWOTD() {
+    wordElement.textContent = "";
+    definition.textContent = "Woord van de dag laden...";
 
-        const index = Math.floor(Math.random() * words.length);
-        const word = words[index].trim();
+    fetch("https://wordoftheday.freeapi.me/")
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("De definitie kan niet opgehaald worden.");
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (typeof data.word !== "string" || typeof data.meaning !== "string") {
+                throw new Error("De definitie kan niet opgehaald worden.");
+            }
+            showWord(data);
+        })
+        .catch(error => {
+            definition.textContent = error.message + " \nJe kan refeshen.. gaat niet helpen denk ik man.";
+        });
+}
 
-        wordElement.textContent = word;
-
-        return fetch(
-            "https://api.dictionaryapi.dev/api/v2/entries/en/"
-            + encodeURIComponent(word)
-        );
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error("De definitie kan niet opgehaald worden.");
-        }
-
-        return response.json();
-    })
-    .then(data => {
-        definition.textContent =
-            data[0].meanings[0].definitions[0].definition;
-    })
-    .catch(error => {
-        definition.textContent =
-            error.message + " \nJe kan refeshen.. gaat niet helpen denk ik man.";
-    });
+loadWOTD();

@@ -612,7 +612,6 @@ header nav .contact-link:hover {
     }
 }
 
-/* Titel en categoriefilters naast elkaar. */
 .projects-heading {
     display: flex;
     justify-content: space-between;
@@ -656,7 +655,6 @@ header nav .contact-link:hover {
     padding: 0;
 }
 
-/* Foutmelding bij het naamveld. */
 .field-error {
     display: block;
     padding: 0;
@@ -667,7 +665,6 @@ header nav .contact-link:hover {
     display: none;
 }
 
-/* Centreer het woordkaartje op de woordpagina. */
 .word-page {
     grid-template-columns: minmax(0, 88rem);
 }

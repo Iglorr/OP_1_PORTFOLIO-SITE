@@ -7,29 +7,32 @@
     <title>Portfolio Website</title>
     <link rel="stylesheet" href="assets/CSS/style.css">
     <script src="assets/JS/FreeOpenAPI.js" defer></script>
+    <script src="assets/JS/contact.js" defer></script>
+
 </head>
+
+
 <body>
+
     <header>
-        <h1 class="site-name">Woordje v.d. Dag</h1>
-        <nav>
+        <h1 class="site-name">Contact.</h1>
+        <nav aria-label="Hoofdnavigatie">
             <ul>
-                <li><a href="index.html" aria-current="page">Home</a></li>
-                <li><a href="projecten.html">projecten</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projecten.html">Projecten</a></li>
                 <li><a href="blog.html">Blog</a></li>
+                <li><a class="contact-link" href="contact.html" aria-current="page">Contact</a></li>
             </ul>
-        </nav>     
+        </nav>
     </header>
 
-        <main class="home-page word-page">
+        <main class="home-page">
             <section class="intro" aria-labelledby="intro-title">
             <article class="intro-text" id="intro-card" aria-live="polite" aria-atomic="true">
                 <p class="intro-label">Your totally random word is...</p>
                 <h2 id="intro-title"></h2>
                 <p class="intro-description" role="status">Definitie laden... </p>
             </article>
-            <!-- <figure class="intro-placeholder">
-                <figcaption>De beste place holder ooit</figcaption>
-            </figure> -->
         </section>
     </main>
 

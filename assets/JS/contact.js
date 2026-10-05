@@ -38,7 +38,6 @@ function validateEmail(form) {
         return false;
     }
 
-    // type="email" laat de browser controleren of het formaat klopt.
     if (emailInput.validity.typeMismatch) {
         emailError.textContent = "Vul een geldig e-mailadres in, bijvoorbeeld naam@voorbeeld.nl.";
         emailInput.setAttribute("aria-invalid", "true");
@@ -54,11 +53,17 @@ function setupContactValidation(form) {
     const nameInput = form.querySelector("#first-name");
     const lastNameInput = form.querySelector("#last-name");
     const emailInput = form.querySelector("#email");
+    const contactHelp = form.parentElement.querySelector("#contact-help");
+    const helpText = contactHelp.textContent;
+
+    form.addEventListener("input", () => {
+        contactHelp.textContent = helpText;
+    });
 
     form.addEventListener("submit", (event) => {
         event.preventDefault();
+        contactHelp.textContent = helpText;
 
-        // Controleer alle drie, zodat alle foutmeldingen tegelijk verschijnen.
         const nameValid = validateName(form);
         const lastNameValid = validateLastName(form);
         const emailValid = validateEmail(form);
@@ -69,6 +74,9 @@ function setupContactValidation(form) {
             lastNameInput.focus();
         } else if (emailValid === false) {
             emailInput.focus();
+        } else {
+            contactHelp.textContent = "Gelukt!";
+            console.log("validatie is helemaal oki doki");
         }
     });
 
