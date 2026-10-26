@@ -3,7 +3,7 @@ const definition = document.querySelector(".intro-description");
 
 function showWord(data) {
     wordElement.textContent = data.word;
-    definition.textContent = data.meaning;
+    definition.textContent = data.definition;
 }
 
 function loadWOTD() {
@@ -13,12 +13,12 @@ function loadWOTD() {
     fetch("https://wordoftheday.freeapi.me/")
         .then(response => {
             if (!response.ok) {
-                throw new Error("De definitie kan niet opgehaald worden.");
+                throw new Error("Je API-aanvraagje is mislukt maatje.");
             }
             return response.json();
         })
         .then(data => {
-            if (typeof data.word !== "string" || typeof data.meaning !== "string") {
+            if (typeof data.word !== "string" || typeof data.definition !== "string") {
                 throw new Error("De definitie kan niet opgehaald worden.");
             }
             showWord(data);

@@ -45,7 +45,7 @@ fetch("assets/JSON/Projecten.json")
                             projectImage.alt = project.alt;
                             projectImage.src = project.image;
                         } else {
-                            placeholder.textContent = "Meneer heeft nog geen afbeelding voor: " + project.title;
+                            placeholder.textContent = "Meneer heeft nog geen afbeelding voor " + project.title;
                         }
                     });
                 }
