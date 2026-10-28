@@ -1,5 +1,6 @@
 using CoreApi.Data;
 using CoreApi.Features.Blogposts;
+using CoreApi.Features.Projects;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,6 +17,7 @@ builder.Services.AddValidation();
 var app = builder.Build();
 
 app.MapAllBlogpostsEndpoints();
+app.MapAllProjectsEndpoints();
 
 if (app.Environment.IsDevelopment())
 {
